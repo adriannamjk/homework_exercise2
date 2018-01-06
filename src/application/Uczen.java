@@ -27,7 +27,7 @@ public class Uczen {
 
                 for (int i=0; i<oceny.length; i++) {
                     if (minOcena>oceny[i]) {
-                        oceny[i]=minOcena;
+                        minOcena=oceny[i];
             }
         }
 
@@ -40,7 +40,7 @@ public class Uczen {
 
                 for (int i=0; i<oceny.length; i++) {
                     if (maxOcena<oceny[i]) {
-                        oceny[i]=maxOcena;
+                        maxOcena=oceny[i];
             }
         }
             return maxOcena;
