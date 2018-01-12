@@ -1,48 +1,50 @@
 package application;
 
+import java.util.ArrayList;
+
 public class Uczen {
 
-    String imie;
-    String nazwisko;
-    float oceny[];
+
+    ArrayList<Double> grades;
+
 
     //metoda wyliczania średniej
         public float sredniaOcen() {
-            float sumaOcen = 0;
+            double sumaOcen = 0;
 
-            for (int i = 0; i < oceny.length; i++) {
-                sumaOcen += oceny[i];
+            for (int i = 0; i < grades.size(); i++) {
+                sumaOcen += grades.get(i);
             }
 
-            float liczbaOcen = oceny.length;
-            float wyliczonaSrednia = sumaOcen/liczbaOcen;
+            int liczbaOcen = grades.size();
+            double wyliczonaSrednia = sumaOcen/liczbaOcen;
 
 
-            return wyliczonaSrednia;
+            return (float) wyliczonaSrednia;
         }
 
         //metoda znajdująca najgorszą ocenę
         public float najgorszaOcena() {
-            float minOcena = oceny[0];
+            double minOcena = grades.get(0);
 
-                for (int i=0; i<oceny.length; i++) {
-                    if (minOcena>oceny[i]) {
-                        minOcena=oceny[i];
+                for (int i=0; i<grades.size(); i++) {
+                    if (minOcena> grades.get(i)) {
+                        minOcena= grades.get(i);
             }
         }
 
-            return minOcena;
+            return (float) minOcena;
         }
 
         //metoda znajdująca najlepszą ocenę
         public float najlepszaOcena() {
-            float maxOcena = oceny[0];
+            double maxOcena = grades.get(0);
 
-                for (int i=0; i<oceny.length; i++) {
-                    if (maxOcena<oceny[i]) {
-                        maxOcena=oceny[i];
+                for (int i=0; i<grades.size(); i++) {
+                    if (maxOcena< grades.get(i)) {
+                        maxOcena= grades.get(i);
             }
         }
-            return maxOcena;
+            return (float) maxOcena;
         }
 }
